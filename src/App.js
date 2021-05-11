@@ -1,7 +1,9 @@
+import List from './components/List/List';
+
 function App() {
     return (
         <div className="App">
-            <h1>Kude si be Miso?!</h1>
+            <List></List>
         </div>
     );
 }

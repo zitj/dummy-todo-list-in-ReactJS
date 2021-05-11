@@ -1,0 +1,25 @@
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+form {
+    width: 80%;
+    margin: 3em auto 0;
+}
+input {
+    height: 30px;
+    width: 60%;
+}
+button {
+    margin-left: 20px;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+input,
+button {
+    border-radius: 10px;
+    outline: none;
+}
