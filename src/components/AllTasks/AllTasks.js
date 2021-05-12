@@ -3,9 +3,9 @@ import Task from '../Task/Task';
 import './AllTasks.css';
 
 const AllTasks = (props) => {
-    const tasks = props.tasks.map((task) => (
-        <Task key={task.id} name={task.name} />
-    ));
+    const tasks = props.tasks
+        .map((task) => <Task key={task.id} name={task.name} />)
+        .reverse();
 
     return (
         <div>
