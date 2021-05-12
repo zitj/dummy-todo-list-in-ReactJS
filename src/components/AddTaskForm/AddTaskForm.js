@@ -14,6 +14,7 @@ const AddTaskForm = (props) => {
             name: writtenTask,
             id: props.counterID,
         };
+        console.log(task);
         setWrittenTask('');
         props.passData(task);
     };

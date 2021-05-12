@@ -1,1 +1,15 @@
-
+li,
+.deleteBtn,
+.editBtn,
+.buttons {
+    display: flex;
+}
+li {
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.deleteBtn,
+.editBtn {
+    background: rgba(255, 86, 86, 0);
+    border: 1px solid black;
+}

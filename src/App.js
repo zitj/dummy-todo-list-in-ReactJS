@@ -9,9 +9,17 @@ const DUMMY_DATA = [
 ];
 function App() {
     const [data, setData] = useState(DUMMY_DATA);
+
     const dataTransfer = (data) => {
         setData((prevData) => {
             return [data, ...prevData];
+        });
+    };
+
+    const deleteDataHandler = (taskId) => {
+        setData((prevData) => {
+            const updatedData = prevData.filter((task) => task.id !== taskId);
+            return updatedData;
         });
     };
 
@@ -19,7 +27,7 @@ function App() {
 
     return (
         <div className="App">
-            <List data={data}></List>
+            <List data={data} deleteDataHandler={deleteDataHandler}></List>
             <AddTaskForm
                 passData={dataTransfer}
                 counterID={counterID}
