@@ -4,8 +4,15 @@ import './Task.css';
 const Task = (props) => {
     let [showEditTaskInput, setShowEditTaskInput] = useState(false);
     let [editBtn, setEditBtn] = useState('✏️');
+    let [editTaskInput, setEditTaskInput] = useState(props.name);
 
     const deleteDataHandler = (event) => {
+        if (showEditTaskInput) {
+            setShowEditTaskInput(false);
+            // setEditTaskInput(props.name);
+            setEditBtn('✏️');
+            return;
+        }
         props.onDelete(props.id);
     };
     const editDataHandler = (event) => {
@@ -13,17 +20,29 @@ const Task = (props) => {
             setEditBtn('✔️');
         } else {
             setEditBtn('✏️');
+            props.onEdit(props.name, editTaskInput, props.id);
         }
         return showEditTaskInput
             ? setShowEditTaskInput(false)
             : setShowEditTaskInput(true);
     };
 
-    const editTaskInput = <input type="text" className="editTaskInput" />;
+    const editTaskInputChange = (event) => {
+        setEditTaskInput(event.target.value);
+    };
+
+    const editTaskInputElement = (
+        <input
+            type="text"
+            className="editTaskInput"
+            value={editTaskInput}
+            onChange={editTaskInputChange}
+        />
+    );
 
     return (
         <li>
-            {props.name}
+            {editTaskInput}
 
             <div className="buttons">
                 <button className="editBtn" onClick={editDataHandler}>
@@ -33,7 +52,7 @@ const Task = (props) => {
                     ❌
                 </button>
             </div>
-            {showEditTaskInput ? editTaskInput : null}
+            {showEditTaskInput ? editTaskInputElement : null}
         </li>
     );
 };

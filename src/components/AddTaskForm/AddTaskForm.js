@@ -12,7 +12,7 @@ const AddTaskForm = (props) => {
         event.preventDefault();
         const task = {
             name: writtenTask,
-            id: props.counterID,
+            id: Date.now(),
         };
         console.log(task);
         setWrittenTask('');

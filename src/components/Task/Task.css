@@ -16,9 +16,9 @@ li {
 }
 .editTaskInput {
     position: absolute;
-    border: none;
-    background-color: rgb(251, 251, 120);
-    margin-top: 3px;
-    font-size: 1.2em;
+    /* background-color: rgb(251, 251, 120); */
+    padding: 3px 3px 3px 10px;
+    font-size: 1em;
     font-family: 'Annie Use Your Telescope', cursive;
+    border: 1px solid black;
 }

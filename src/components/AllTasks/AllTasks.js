@@ -7,6 +7,12 @@ const AllTasks = (props) => {
         console.log(`Task with id: ${data} has been deleted.`);
         props.deleteData(data);
     };
+    const editData = (arg1, arg2, arg3) => {
+        props.editData(arg1, arg2, arg3);
+    };
+    const cancelData = (arg1, arg2) => {
+        props.cancelData(arg1, arg2);
+    };
     const tasks = props.tasks
         .map((task) => (
             <Task
@@ -14,6 +20,8 @@ const AllTasks = (props) => {
                 name={task.name}
                 id={task.id}
                 onDelete={deleteData}
+                onEdit={editData}
+                onCancel={cancelData}
             />
         ))
         .reverse();
