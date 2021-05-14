@@ -7,9 +7,18 @@ li,
 li {
     justify-content: space-between;
     margin-bottom: 15px;
+    position: relative;
 }
 .deleteBtn,
 .editBtn {
     background: rgba(255, 86, 86, 0);
     border: 1px solid black;
+}
+.editTaskInput {
+    position: absolute;
+    border: none;
+    background-color: rgb(251, 251, 120);
+    margin-top: 3px;
+    font-size: 1.2em;
+    font-family: 'Annie Use Your Telescope', cursive;
 }
