@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Task.css';
+import './style/Task.css';
 
 const Task = (props) => {
     let [showEditTaskInput, setShowEditTaskInput] = useState(false);

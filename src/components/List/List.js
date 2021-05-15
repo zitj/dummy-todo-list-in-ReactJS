@@ -1,6 +1,6 @@
 import React from 'react';
 import AllTasks from '../AllTasks/AllTasks';
-import './List.css';
+import './style/List.css';
 
 const List = (props) => {
     const deleteDataHandler = (arg) => {

@@ -1,0 +1,24 @@
+.wrapper {
+  background: #fbfb78;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 500px;
+  height: 60vh;
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.616);
+          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.616);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 1.5em;
+  font-size: 2em;
+  color: #242424;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Annie Use Your Telescope', cursive;
+}
+/*# sourceMappingURL=List.css.map */

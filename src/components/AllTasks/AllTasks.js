@@ -1,6 +1,6 @@
 import React from 'react';
 import Task from '../Task/Task';
-import './AllTasks.css';
+import './style/AllTasks.css';
 
 const AllTasks = (props) => {
     const deleteData = (data) => {
