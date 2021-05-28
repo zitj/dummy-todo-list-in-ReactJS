@@ -12,7 +12,7 @@ const Task = (props) => {
     const deleteDataHandler = (event) => {
         if (showEditTaskInput) {
             setShowEditTaskInput(false);
-            // setEditTaskInput(props.name);
+            setEditTaskInput(props.name);
             setEditBtn('✏️');
             return;
         }

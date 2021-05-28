@@ -32,25 +32,19 @@ export const NewTaskContextProvider = (props) => {
 
     const editTask = (taskName, newTaskName, taskId) => {
         console.log(`previous task: ${taskName}, new task: ${newTaskName}`);
-
-        tasks.forEach((task) => {
-            if (task.name === taskName) {
-                task.name = newTaskName;
-                console.log(task);
-            }
+        setTasks((prevTasks) => {
+            const updatedTasks = prevTasks.filter((task) => {
+                if (task.name === taskName) {
+                    task.name = newTaskName;
+                }
+                return task;
+            });
+            return updatedTasks;
         });
-
         console.log(tasks);
     };
-
     const cancelEditTask = (taskName, newTaskName) => {
         console.log(`previous task: ${taskName}, new task: ${newTaskName}`);
-
-        tasks.forEach((task) => {
-            if (task.name === taskName) {
-                newTaskName = taskName;
-            }
-        });
 
         console.log(tasks);
     };
