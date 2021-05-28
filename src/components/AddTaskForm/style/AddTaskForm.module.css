@@ -15,7 +15,7 @@ form {
 
 input {
   height: 30px;
-  width: 60%;
+  width: 65%;
   border: 1px solid black;
   padding: 2px 10px;
   font-size: 1em;
@@ -35,4 +35,9 @@ button {
   border-radius: 10px;
   outline: none;
 }
-/*# sourceMappingURL=AddTaskForm.css.map */
+
+.dugme {
+  background: rgba(255, 255, 255, 0.904);
+  border: 1px solid black;
+}
+/*# sourceMappingURL=AddTaskForm.module.css.map */

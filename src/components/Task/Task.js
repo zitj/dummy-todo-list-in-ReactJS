@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
-import './style/Task.css';
+import styles from './style/Task.module.css';
 import NewTaskContext from '../../context/new-task-context';
+import Button from '../UI/Button/Button';
+import Input from '../UI/Input/Input';
 
 const Task = (props) => {
     const newTaskContext = useContext(NewTaskContext);
@@ -9,18 +11,17 @@ const Task = (props) => {
     let [editBtn, setEditBtn] = useState('✏️');
     let [editTaskInput, setEditTaskInput] = useState(props.name);
 
-    const deleteDataHandler = (event) => {
+    const deleteTaskHandler = (event) => {
         if (showEditTaskInput) {
             setShowEditTaskInput(false);
             setEditTaskInput(props.name);
             setEditBtn('✏️');
             return;
         }
-        // props.onDelete(props.id);
         newTaskContext.onDelete(props.id);
         console.log('Deleted');
     };
-    const editDataHandler = (event) => {
+    const editTaskHandler = (event) => {
         if (!showEditTaskInput) {
             setEditBtn('✔️');
         } else {
@@ -36,28 +37,30 @@ const Task = (props) => {
         setEditTaskInput(event.target.value);
     };
 
-    const editTaskInputElement = (
-        <input
-            type="text"
-            className="editTaskInput"
-            value={editTaskInput}
-            onChange={editTaskInputChange}
-        />
-    );
-
     return (
         <li>
             {editTaskInput}
 
-            <div className="buttons">
-                <button className="editBtn" onClick={editDataHandler}>
+            <div className={styles.buttons}>
+                <Button
+                    id="editBtn"
+                    className={styles.dugme}
+                    onClick={editTaskHandler}
+                >
                     {editBtn}
-                </button>
-                <button className="deleteBtn" onClick={deleteDataHandler}>
+                </Button>
+                <Button id="deleteBtn" onClick={deleteTaskHandler}>
                     ❌
-                </button>
+                </Button>
             </div>
-            {showEditTaskInput ? editTaskInputElement : null}
+            {showEditTaskInput ? (
+                <Input
+                    type="text"
+                    className={styles.editTaskInput}
+                    value={editTaskInput}
+                    onChange={editTaskInputChange}
+                ></Input>
+            ) : null}
         </li>
     );
 };

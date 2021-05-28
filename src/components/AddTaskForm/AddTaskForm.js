@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
-import './style/AddTaskForm.css';
+import styles from './style/AddTaskForm.module.css';
 import NewTaskContext from '../../context/new-task-context';
+import Input from '../UI/Input/Input';
+import Button from '../UI/Button/Button';
 
 const AddTaskForm = (props) => {
     const newTaskContext = useContext(NewTaskContext);
@@ -24,8 +26,10 @@ const AddTaskForm = (props) => {
     return (
         <form action="submit" onSubmit={submitForm}>
             <label htmlFor="">Type here your new task</label>
-            <input type="text" onChange={writeTask} value={writtenTask} />
-            <button type="submit">Add new task</button>
+            <Input type="text" onChange={writeTask} value={writtenTask}></Input>
+            <Button type="submit" className={styles.dugme}>
+                ➕
+            </Button>
         </form>
     );
 };

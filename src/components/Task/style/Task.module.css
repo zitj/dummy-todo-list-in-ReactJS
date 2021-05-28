@@ -1,13 +1,7 @@
-li,
-.deleteBtn,
-.editBtn,
-.buttons {
+li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -15,18 +9,18 @@ li {
   position: relative;
 }
 
-.deleteBtn,
-.editBtn {
-  background: rgba(255, 86, 86, 0);
-  border: 1px solid black;
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .editTaskInput {
   position: absolute;
-  /* background-color: rgb(251, 251, 120); */
   padding: 3px 3px 3px 10px;
   font-size: 1em;
   font-family: 'Annie Use Your Telescope', cursive;
   border: 1px solid black;
+  top: 0%;
 }
-/*# sourceMappingURL=Task.css.map */
+/*# sourceMappingURL=Task.module.css.map */
