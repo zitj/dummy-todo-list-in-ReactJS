@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './style/Task.css';
+import NewTaskContext from '../../context/new-task-context';
 
 const Task = (props) => {
+    const newTaskContext = useContext(NewTaskContext);
+
     let [showEditTaskInput, setShowEditTaskInput] = useState(false);
     let [editBtn, setEditBtn] = useState('✏️');
     let [editTaskInput, setEditTaskInput] = useState(props.name);
@@ -13,14 +16,16 @@ const Task = (props) => {
             setEditBtn('✏️');
             return;
         }
-        props.onDelete(props.id);
+        // props.onDelete(props.id);
+        newTaskContext.onDelete(props.id);
+        console.log('Deleted');
     };
     const editDataHandler = (event) => {
         if (!showEditTaskInput) {
             setEditBtn('✔️');
         } else {
             setEditBtn('✏️');
-            props.onEdit(props.name, editTaskInput, props.id);
+            newTaskContext.onEdit(props.name, editTaskInput, props.id);
         }
         return showEditTaskInput
             ? setShowEditTaskInput(false)

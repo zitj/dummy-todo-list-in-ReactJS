@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './style/AddTaskForm.css';
+import NewTaskContext from '../../context/new-task-context';
 
 const AddTaskForm = (props) => {
+    const newTaskContext = useContext(NewTaskContext);
     const [writtenTask, setWrittenTask] = useState('');
 
     const writeTask = (event) => {
@@ -16,7 +18,7 @@ const AddTaskForm = (props) => {
         };
         console.log(task);
         setWrittenTask('');
-        props.passData(task);
+        newTaskContext.onCreate(task);
     };
 
     return (

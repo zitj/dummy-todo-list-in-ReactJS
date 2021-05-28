@@ -1,35 +1,19 @@
-import React from 'react';
+import React, { Fragment, useContext } from 'react';
 import Task from '../Task/Task';
 import './style/AllTasks.css';
+import NewTaskContext from '../../context/new-task-context';
 
 const AllTasks = (props) => {
-    const deleteData = (data) => {
-        console.log(`Task with id: ${data} has been deleted.`);
-        props.deleteData(data);
-    };
-    const editData = (arg1, arg2, arg3) => {
-        props.editData(arg1, arg2, arg3);
-    };
-    const cancelData = (arg1, arg2) => {
-        props.cancelData(arg1, arg2);
-    };
-    const tasks = props.tasks
-        .map((task) => (
-            <Task
-                key={task.id}
-                name={task.name}
-                id={task.id}
-                onDelete={deleteData}
-                onEdit={editData}
-                onCancel={cancelData}
-            />
-        ))
+    const newTaskContext = useContext(NewTaskContext);
+
+    const tasks = newTaskContext.tasks
+        .map((task) => <Task key={task.id} name={task.name} id={task.id} />)
         .reverse();
 
     return (
-        <div>
+        <Fragment>
             <ul>{tasks}</ul>
-        </div>
+        </Fragment>
     );
 };
 
